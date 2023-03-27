@@ -30,9 +30,4 @@ export class RoutesService {
   remove(id: number) {
     return `This action removes a #${id} route`;
   }
-
-  @Get(':id/start')
-  startRoute(@Param('id') id: string) {
-    console.log(id);
-  }
 }
