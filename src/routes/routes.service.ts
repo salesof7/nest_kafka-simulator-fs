@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Get, Injectable, Param } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateRouteDto } from './dto/create-route.dto';
@@ -29,5 +29,10 @@ export class RoutesService {
 
   remove(id: number) {
     return `This action removes a #${id} route`;
+  }
+
+  @Get(':id/start')
+  startRoute(@Param('id') id: string) {
+    console.log(id);
   }
 }
